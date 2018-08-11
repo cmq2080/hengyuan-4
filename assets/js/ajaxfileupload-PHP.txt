@@ -1,0 +1,30 @@
+﻿public function uploadimg(){
+	$whitelist = array('jpg', 'jpeg', 'png', 'gif');
+	$name = null;
+	$error = 'No file uploaded.';
+	
+	if (isset($_FILES)) {
+		if (isset($_FILES['file'])) {
+			$tmp_name = $_FILES['file']['tmp_name'];
+			$name = basename($_FILES['file']['name']);
+			$error = $_FILES['file']['error'];
+			$baseurl=realpath('images/upload');
+				
+			if ($error === UPLOAD_ERR_OK) {
+				$extension = pathinfo($name, PATHINFO_EXTENSION);
+	
+				if (!in_array($extension, $whitelist)) {
+					$error = 'Invalid file type uploaded.';
+				} else {
+					//此次可更改上传后文件名称
+					$name=str_replace('.', '', microtime(TRUE)).'.'.$extension;
+					$url = $baseurl.'/'.iconv('utf-8', 'gb2312//IGNORE', $name);
+					move_uploaded_file($tmp_name, $url);
+				}
+			}
+		}
+	}
+	
+	echo json_encode(array('name' => $name, 'error' => $error, ));
+	die();
+}
