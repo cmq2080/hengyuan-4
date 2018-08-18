@@ -10,6 +10,7 @@
     </style>
     <script src="assets/js/jquery-2.1.4.min.js"></script>
     <script src="assets/plugins/zui-1.8.1-dist/js/zui.min.js"></script>
+    <script src="assets/js/common.js"></script>
 </head>
 <body>
     <div class="container-fluid" style="padding: 0;">
@@ -20,18 +21,15 @@
             <nav class="menu" data-ride="menu" style="">
                 <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
                     <li>
-                        <a href="#">
-                            <i class="icon icon-th"></i>首页</a>
+                        <a href="#">首页</a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="icon icon-user"></i>个人资料</a>
+                        <a href="#">个人资料</a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="icon icon-time"></i>更新时间</a>
+                        <a href="#">更新时间</a>
                         <ul>
-                            <li>
+                            <li class="active">
                                 <a href="#">今天</a>
                             </li>
                             <li>
@@ -45,40 +43,6 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i class="icon icon-trash"></i>垃圾篓</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="icon icon-list-ul"></i>全部</a>
-                    </li>
-                    <li class="open">
-                        <a href="#">
-                            <i class="icon icon-tasks"></i>状态</a>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="icon icon-circle-blank"></i>已就绪</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">已取消</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">已关闭</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="active">
-                                <a href="#">
-                                    <i class="icon icon-play-sign"></i>进行中</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon icon-ok-sign"></i>已完成</a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
             </nav>
         </div>
@@ -86,6 +50,7 @@
             <div>
                 <h3 style="margin:10px auto;">内容管理</h3>
             </div>
+            <iframe id="iframe" src="main.html" frameborder="0" class="col-md-12" style="padding: 0;"></iframe>
         </div>
     </div>
 </body>
