@@ -11,6 +11,16 @@
     <script src="assets/js/jquery-2.1.4.min.js"></script>
     <script src="assets/plugins/zui-1.8.1-dist/js/zui.min.js"></script>
     <script src="assets/js/common.js"></script>
+    <script>
+        $(function() {
+            $("#treeMenu a[type='link']").on("click", function() {
+                var href=$(this).attr("data-href");
+                var topic=$(this).html();
+                $(".topic h3").html(topic);
+                $("#iframe").attr("src", href);
+            });
+        })
+    </script>
 </head>
 <body>
     <div class="container-fluid" style="padding: 0;">
@@ -18,39 +28,36 @@
             <div>
                 <h1 style="text-align: center">网站后台管理</h1>
             </div>
-            <nav class="menu" data-ride="menu" style="">
+            <nav class="menu" data-ride="menu">
                 <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
                     <li>
-                        <a href="#">首页</a>
+                        <a type="link" data-href="form.html">首页</a>
                     </li>
                     <li>
-                        <a href="#">个人资料</a>
+                        <a type="link" href="#">个人资料</a>
                     </li>
                     <li>
                         <a href="#">更新时间</a>
                         <ul>
                             <li class="active">
-                                <a href="#">今天</a>
+                                <a type="link" data-href="main.html">今天</a>
                             </li>
                             <li>
-                                <a href="#">明天</a>
+                                <a type="link" href="#">明天</a>
                             </li>
                             <li>
-                                <a href="#">昨天</a>
-                            </li>
-                            <li>
-                                <a href="#">本周</a>
+                                <a type="link" href="#">昨天</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </nav>
         </div>
-        <div class="col-md-10" style="">
-            <div>
+        <div class="col-md-10">
+            <div class="topic">
                 <h3 style="margin:10px auto;">内容管理</h3>
             </div>
-            <iframe id="iframe" src="main.html" frameborder="0" class="col-md-12" style="padding: 0;"></iframe>
+            <iframe id="iframe" name="iframe" src="main.html" frameborder="0" class="col-md-12" style="padding: 0;"></iframe>
         </div>
     </div>
 </body>
