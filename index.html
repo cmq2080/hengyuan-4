@@ -13,11 +13,16 @@
     <script src="assets/js/common.js"></script>
     <script>
         $(function() {
-            $("#treeMenu a[type='link']").on("click", function() {
+            $("#treeMenu a").on("click", function() {
                 var href=$(this).attr("data-href");
                 var topic=$(this).html();
+                if(!href){
+                    return;
+                }
                 $(".topic h3").html(topic);
                 $("#iframe").attr("src", href);
+                $("#treeMenu li").removeClass("active");
+                $(this).parent().addClass("active");
             });
         })
     </script>
@@ -31,22 +36,22 @@
             <nav class="menu" data-ride="menu">
                 <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
                     <li>
-                        <a type="link" data-href="form.html">首页</a>
+                        <a data-href="form.html">首页</a>
                     </li>
                     <li>
-                        <a type="link" href="#">个人资料</a>
+                        <a data-href="">个人资料</a>
                     </li>
                     <li>
-                        <a href="#">更新时间</a>
+                        <a href="#">更新时间</a><!--这里的href必须写东西，否则下级菜单不会展示-->
                         <ul>
                             <li class="active">
-                                <a type="link" data-href="main.html">今天</a>
+                                <a data-href="main.html">今天</a>
                             </li>
                             <li>
-                                <a type="link" href="#">明天</a>
+                                <a data-href="">明天</a><!--没有就空着，这时候会被return的-->
                             </li>
                             <li>
-                                <a type="link" href="#">昨天</a>
+                                <a data-href="">昨天</a>
                             </li>
                         </ul>
                     </li>
