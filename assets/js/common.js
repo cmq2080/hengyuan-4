@@ -85,6 +85,16 @@ function deleteSelected(url) {
 	deleteOne(url, id);
 }
 
+// 在表单数据中获取某个相对应的值
+function getFormValue(formData, name) {
+    for (var i = 0; i < formData.length; i++) {
+        if (formData[i].name == name) {
+            return formData[i].value;
+        }
+    }
+    return null;
+}
+
 
 $(function () {
 	/*
