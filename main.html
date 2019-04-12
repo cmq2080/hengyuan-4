@@ -8,6 +8,7 @@
     <title></title>
     
     <link rel="stylesheet" type="text/css" media="screen" href="assets/plugins/zui-1.8.1-dist/css/zui.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/admin/main.css">
     <!-- <link rel="stylesheet" type="text/css" href="assets/plugins/zTree_v3-3.5.40/css/zTreeStyle/zTreeStyle.css"> -->
     <style type="text/css">
     </style>
@@ -22,6 +23,33 @@
 <body>
     <div class="container-fluid" style="padding: 0;">
         <div class="col-md-12" style="padding: 0">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-1">用户名</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="username" value="">
+                    </div>
+                    <label class="col-sm-1">性别</label>
+                    <div class="col-sm-1">
+                        <select class="form-control" name="sex">
+                            <option value="">---</option>
+                            <option value="1">男</option>
+                            <option value="2">女</option>
+                        </select>
+                    </div>
+                    <label class="col-sm-1">联系电话</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="telephone" value="">
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="submit" class="btn btn-primary">查询</button>
+                    </div>
+                </div>
+            </form>
+            <div class="hy-btn-container" style="margin: 0.5rem auto;">
+                <button type="button" class="btn btn-sm btn-primary">添加</button>
+                <button type="button" class="btn btn-sm btn-primary">批量删除</button>
+            </div>
             <table class="table table-striped hy-main-table">
                 <thead>
                     <tr>
