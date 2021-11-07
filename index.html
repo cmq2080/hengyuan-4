@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>网站管理系统</title>    
+    <title>网站管理系统</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/plugins/zui-1.8.1-dist/css/zui.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/plugins/zui-1.10.0-dist/css/zui.min.css" />
     <!-- <link rel="stylesheet" type="text/css" href="assets/plugins/zTree_v3-3.5.40/css/zTreeStyle/zTreeStyle.css"> -->
     <style type="text/css">
-        .hy-topic{
+        .hy-topic {
             text-align: right;
         }
-        .hy-topic a{
+
+        .hy-topic a {
             color: #353535;
             margin: 0 1rem;
         }
     </style>
 
     <script src="assets/js/jquery-2.1.4.min.js"></script>
-    <script src="assets/plugins/zui-1.8.1-dist/js/zui.min.js"></script>
+    <script src="assets/plugins/zui-1.10.0-dist/js/zui.min.js"></script>
     <script src="assets/js/common.js"></script>
     <!-- <script type="text/javascript" src="assets/js/vue-2.6.10.min.js"></script> -->
     <!-- <script type="text/javascript" src="assets/plugins/plupload-2.3.6/js/plupload.full.min.js"></script> -->
-	<!-- <script type="text/javascript" src="assets/plugins/zTree_v3-3.5.40/js/jquery.ztree.core.min.js"></script> -->
+    <!-- <script type="text/javascript" src="assets/plugins/zTree_v3-3.5.40/js/jquery.ztree.core.min.js"></script> -->
     <script type="text/javascript">
-        $(function() {
-            $("#treeMenu a").on("click", function() {
-                var href=$(this).attr("data-href");
-                var topic=$(this).html();
-                if(!href){
+        $(function () {
+            $("#treeMenu a").on("click", function () {
+                var href = $(this).attr("data-href");
+                var topic = $(this).html();
+                if (!href) {
                     return;
                 }
                 $(".topic h3").html(topic);
@@ -41,6 +43,7 @@
         })
     </script>
 </head>
+
 <body>
     <div class="container-fluid" style="padding: 0;">
         <div class="col-md-2" style="padding: 0">
@@ -60,13 +63,15 @@
                         <a data-href="">个人资料</a>
                     </li>
                     <li>
-                        <a href="#">更新时间</a><!--这里的href必须写东西，否则下级菜单不会展示-->
+                        <a href="#">更新时间</a>
+                        <!--这里的href必须写东西，否则下级菜单不会展示-->
                         <ul>
                             <li class="active">
                                 <a data-href="main.html">今天</a>
                             </li>
                             <li>
-                                <a data-href="">明天</a><!--没有就空着，这时候会被return的-->
+                                <a data-href="">明天</a>
+                                <!--没有就空着，这时候会被return的-->
                             </li>
                             <li>
                                 <a data-href="">昨天</a>
@@ -80,8 +85,10 @@
             <div class="topic">
                 <h3 style="margin:10px auto;">内容管理</h3>
             </div>
-            <iframe id="iframe" name="iframe" src="main.html" frameborder="0" class="col-md-12" style="padding: 0;"></iframe>
+            <iframe id="iframe" name="iframe" src="main.html" frameborder="0" class="col-md-12"
+                style="padding: 0;"></iframe>
         </div>
     </div>
 </body>
+
 </html>

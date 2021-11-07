@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title></title>
-    
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/plugins/zui-1.8.1-dist/css/zui.min.css" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/plugins/zui-1.10.0-dist/css/zui.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/admin/main.css">
     <!-- <link rel="stylesheet" type="text/css" href="assets/plugins/zTree_v3-3.5.40/css/zTreeStyle/zTreeStyle.css"> -->
     <style type="text/css">
     </style>
 
     <script src="assets/js/jquery-2.1.4.min.js"></script>
-    <script src="assets/plugins/zui-1.8.1-dist/js/zui.min.js"></script>
+    <script src="assets/plugins/zui-1.10.0-dist/js/zui.min.js"></script>
     <script src="assets/js/common.js"></script>
     <!-- <script type="text/javascript" src="assets/js/vue-2.6.10.min.js"></script> -->
     <!-- <script type="text/javascript" src="assets/plugins/plupload-2.3.6/js/plupload.full.min.js"></script> -->
-	<!-- <script type="text/javascript" src="assets/plugins/zTree_v3-3.5.40/js/jquery.ztree.core.min.js"></script> -->
+    <!-- <script type="text/javascript" src="assets/plugins/zTree_v3-3.5.40/js/jquery.ztree.core.min.js"></script> -->
+    <style>
+        .hy-datagrid thead {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container-fluid" style="padding: 0;">
         <div class="col-md-12" style="padding: 0">
@@ -47,96 +54,21 @@
                 </div>
             </form>
             <div class="hy-btn-container" style="margin: 0.5rem auto;">
-                <button type="button" class="btn btn-sm btn-primary">添加</button>
-                <button type="button" class="btn btn-sm btn-primary">批量删除</button>
+                <button type="button" class="btn btn-primary">添加</button>
+                <button type="button" class="btn btn-primary">批量删除</button>
             </div>
-            <table class="table table-striped hy-main-table">
+            <table class="table" data-grid="1" id="table1" data-url="http://127.0.0.1/app/dev1/20181005-2.php">
                 <thead>
                     <tr>
-                        <th>
-                            <input type="checkbox" class="dataid" name="dataid" />
-                        </th>
-                        <th>用户名</th>
-                        <th>密码</th>
-                        <th>真实姓名</th>
-                        <th>创建时间</th>
-                        <th>登录时间</th>
-                        <th>修改时间</th>
-                        <th>删除时间</th>
-                        <th>操作</th>
+                        <th data-name="name" data-width="">角色</th>
+                        <th data-name="cv_name" data-width="">配信声优</th>
+                        <th data-name="note" data-width="">备注</th>
+                        <th data-name="option" data-type="raw">
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="id" name="id" value="" />
-                        </td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>
-                            <a href="">修改</a>
-                            <a href="">删除</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="id" name="id" value="" />
-                        </td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>
-                            <a href="">修改</a>
-                            <a href="">删除</a>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot></tfoot>
             </table>
-            <div id="pagination">
-                <ul class="pager">
-                    <li class="disabled">
-                        <span>&laquo;</span>
-                    </li>
-                    <li class="active">
-                        <span>1</span>
-                    </li>
-                    <li>
-                        <a href="/admin/enroll/index/activityid/1.html?page=2">2</a>
-                    </li>
-                    <li>
-                        <a href="/admin/enroll/index/activityid/1.html?page=3">3</a>
-                    </li>
-                    <li>
-                        <a href="/admin/enroll/index/activityid/1.html?page=4">4</a>
-                    </li>
-                    <li>
-                        <a href="/admin/enroll/index/activityid/1.html?page=5">5</a>
-                    </li>
-                    <li>
-                        <a href="/admin/enroll/index/activityid/1.html?page=6">6</a>
-                    </li>
-                    <li>
-                        <a href="/admin/enroll/index/activityid/1.html?page=7">7</a>
-                    </li>
-                    <li>
-                        <a href="/admin/enroll/index/activityid/1.html?page=8">18</a>
-                    </li>
-                    <li>
-                        <a href="/admin/enroll/index/activityid/1.html?page=2">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </div>
 </body>
+
 </html>
